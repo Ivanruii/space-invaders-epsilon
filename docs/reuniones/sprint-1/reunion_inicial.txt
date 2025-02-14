@@ -1,0 +1,9 @@
+Scrum 14-02-25
+
+- Asignado Scrum Master a Iván.
+- Creado el repositorio en GitHub y añadidos los colaboradores.
+- Repartidas las tareas:
+	- Tarea 1: Dibujado de diagrama. Nacho
+    - Tarea 2: Identificación de atributos. Paula
+    - Tarea 3: Identificación de metodos. Pablo
+    - Tarea 4: Creación de estructura libgdx. Ángel
