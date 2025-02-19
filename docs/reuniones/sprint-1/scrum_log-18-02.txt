@@ -1,0 +1,6 @@
+Scrum 18-02-25
+
+- Nacho: Terminada Tarea.
+- Paula: Terminada Tarea.
+- Pablo: En proceso de añadir los CRUD a la identificación de metodos.
+- Angel: Terminada Tarea.
