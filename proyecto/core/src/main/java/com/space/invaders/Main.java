@@ -26,9 +26,6 @@ public class Main extends ApplicationAdapter {
 
     private Texture portada;
 
-    private Texture gameOver;
-
-
     private DisparoAmigo disparoAmigo;
 
     private float click;
