@@ -1,5 +1,6 @@
 package Model;
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
@@ -35,10 +36,16 @@ public class NaveAmiga extends Nave{
     }
 
     public void move(float click){
-         if (click < (this.posX+(this.ancho/2))) {
-            posX--;
+        if (click < (this.posX+(this.ancho/2))) {
+            if(this.posX>0){
+                posX--;
+            }
         }else{
-            posX++;
+            if(click-this.posX>this.ancho){
+                if(this.posX+this.ancho<Gdx.graphics.getWidth()){
+                    posX++;
+                }
+            }
         }
     }
 

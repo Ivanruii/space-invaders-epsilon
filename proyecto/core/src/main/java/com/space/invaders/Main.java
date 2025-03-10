@@ -41,7 +41,7 @@ public class Main extends ApplicationAdapter {
     @Override
     public void create() {
         sitio = (Gdx.graphics.getWidth()/2)- 60;
-        click = (Gdx.graphics.getWidth()/2)- 60;
+        click = (Gdx.graphics.getWidth()/2);
         batch = new SpriteBatch();
         image = new Texture("libgdx.png");
         naveAmiga = new Texture("naveAmiga.png");
