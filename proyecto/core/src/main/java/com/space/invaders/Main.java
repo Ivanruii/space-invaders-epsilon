@@ -36,6 +36,8 @@ public class Main extends ApplicationAdapter {
 
     private Music music_intro;
 
+    private Music music_playing;
+
     @Override
     public void create() {
         sitio = (Gdx.graphics.getWidth()/2)- 60;
@@ -46,9 +48,12 @@ public class Main extends ApplicationAdapter {
         dispAmigo = new Texture("disparoAmigo.png");
         portada = new Texture("inicio.png");
         music_intro = Gdx.audio.newMusic(Gdx.files.internal("Music/principio.mp3"));
+        music_playing = Gdx.audio.newMusic(Gdx.files.internal("Music/play.mp3"));
         inicio = true;
         music_intro.setLooping(true);
         music_intro.play();
+        music_playing.setLooping(true);
+        music_playing.stop();
 
         disparoAmigo = new DisparoAmigo(20, 20, 60, 60, false, dispAmigo, false, 4);
         amiga = new NaveAmiga(60, 80, (Gdx.graphics.getWidth()/2)- 60, 10, naveAmiga, true, 3);
@@ -65,6 +70,7 @@ public class Main extends ApplicationAdapter {
                 music_intro.stop();
             }
         }else {
+            music_playing.play();
             amiga.draw(batch);
             if (Gdx.input.justTouched()) {
                 click = Gdx.input.getX();
