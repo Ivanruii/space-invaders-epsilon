@@ -42,7 +42,7 @@ public class NaveAmiga extends Nave{
             }
         }else{
             if(click-this.posX>this.ancho){
-                if(this.posX+this.ancho<Gdx.graphics.getWidth()){
+                if(this.posX+this.ancho<Gdx.graphics.getWidth()-18){
                     posX++;
                 }
             }
