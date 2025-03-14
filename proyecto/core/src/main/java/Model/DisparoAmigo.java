@@ -7,7 +7,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 public class DisparoAmigo extends Disparo{
     private Texture disparoAmigo;
 
-    public DisparoAmigo(int ancho, int alto, float posX, float posY, boolean enCurso, Texture disparoAmigo, ) {
+    public DisparoAmigo(int ancho, int alto, float posX, float posY, boolean enCurso, Texture disparoAmigo) {
         super(ancho, alto, posX, posY, enCurso);
         this.disparoAmigo = disparoAmigo;
     }
