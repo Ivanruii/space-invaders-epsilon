@@ -7,32 +7,13 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 public class DisparoAmigo extends Disparo{
     private Texture disparoAmigo;
 
-    private boolean vivo;
-
-    private int vidas;
-
-
-    public DisparoAmigo(int ancho, int alto, float posX, float posY, boolean enCurso, Texture disparoAmigo, boolean vivo, int vidas) {
+    public DisparoAmigo(int ancho, int alto, float posX, float posY, boolean enCurso, Texture disparoAmigo, ) {
         super(ancho, alto, posX, posY, enCurso);
         this.disparoAmigo = disparoAmigo;
-        this.vivo = vivo;
-        this.vidas = vidas;
     }
 
     public Texture getDisparoAmigo() {
         return disparoAmigo;
-    }
-
-    public boolean isVivo() {
-        return vivo;
-    }
-
-    public void setVivo(boolean vivo) {
-        this.vivo = vivo;
-    }
-
-    public int getVidas() {
-        return vidas;
     }
 
     public void shoot(float posX){

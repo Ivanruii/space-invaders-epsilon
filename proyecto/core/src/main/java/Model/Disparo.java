@@ -39,6 +39,10 @@ public class Disparo {
         return posY;
     }
 
+    public void setPosY(float posY) {
+        this.posY = posY;
+    }
+
     public boolean isEnCurso() {
         return enCurso;
     }

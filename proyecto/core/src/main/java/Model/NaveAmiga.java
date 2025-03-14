@@ -5,6 +5,8 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 public class NaveAmiga extends Nave{
+    private DisparoAmigo disparoA;
+
     private Texture naveAmiga;
 
     private boolean vivo;
@@ -12,11 +14,12 @@ public class NaveAmiga extends Nave{
     private int vidas;
 
 
-    public NaveAmiga(int ancho, int alto, float posX, float posY,  Texture naveAmiga, boolean vivo, int vidas) {
+    public NaveAmiga(int ancho, int alto, float posX, float posY,  Texture naveAmiga, boolean vivo, int vidas, DisparoAmigo disparoA) {
         super(ancho, alto, posX, posY);
         this.naveAmiga = naveAmiga;
         this.vivo = vivo;
         this.vidas = vidas;
+        this.disparoA = disparoA;
     }
 
     public Texture getNaveAmiga() {
@@ -46,6 +49,16 @@ public class NaveAmiga extends Nave{
                     posX++;
                 }
             }
+        }
+    }
+
+    public void shoot(float posX){
+        disparoA.setPosX(posX);
+        if (disparoA.getPosY()< Gdx.graphics.getHeight()){
+            disparoA.setPosY(disparoA.getPosY()+5);
+        }else{
+            disparoA.setPosY(60);
+            disparoA.setEnCurso(false);
         }
     }
 

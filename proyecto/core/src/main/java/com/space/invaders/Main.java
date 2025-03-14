@@ -55,8 +55,8 @@ public class Main extends ApplicationAdapter {
         music_playing.setLooping(true);
         music_playing.stop();
 
-        disparoAmigo = new DisparoAmigo(20, 20, 60, 60, false, dispAmigo, false, 4);
-        amiga = new NaveAmiga(60, 80, (Gdx.graphics.getWidth()/2)- 60, 10, naveAmiga, true, 3);
+        disparoAmigo = new DisparoAmigo(20, 20, 60, 60, false, dispAmigo);
+        amiga = new NaveAmiga(60, 80, (Gdx.graphics.getWidth()/2)- 60, 10, naveAmiga, true, 3, disparoAmigo);
     }
 
     @Override
@@ -80,7 +80,8 @@ public class Main extends ApplicationAdapter {
                 disparoAmigo.setEnCurso(true);
             }
             if (disparoAmigo.isEnCurso()) {
-                disparoAmigo.shoot(sitio);
+                //disparoAmigo.shoot(sitio);
+                amiga.shoot(sitio);
                 if (disparoAmigo.isEnCurso()) {
                     disparoAmigo.draw(batch);
                 }
