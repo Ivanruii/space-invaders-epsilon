@@ -26,6 +26,21 @@ public class DisparoAmigo extends Disparo{
         }
     }
 
+    public boolean colisionaNaveEnemiga(NaveEnemiga naveEnemiga) {
+        if (!this.isEnCurso() || !naveEnemiga.isVivo()) {
+            return false;
+        }
+
+        float disparoX = this.getPosX();
+        float disparoY = this.getPosY();
+        float naveX = naveEnemiga.getPosX();
+        float naveY = naveEnemiga.getPosY();
+
+        return (disparoX < naveX + naveEnemiga.getAncho() &&
+            disparoX + this.getAncho() > naveX &&
+            disparoY < naveY + naveEnemiga.getAlto() &&
+            disparoY + this.getAlto() > naveY);
+    }
 
     public void draw (SpriteBatch sp) {
         sp.draw(this.getDisparoAmigo(),this.getPosX(),this.getPosY(),this.getAlto(),this.getAncho());

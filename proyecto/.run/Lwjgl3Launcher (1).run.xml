@@ -1,0 +1,14 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Lwjgl3Launcher (1)" type="Application" factoryName="Application">
+    <option name="MAIN_CLASS_NAME" value="com.space.invaders.lwjgl3.Lwjgl3Launcher" />
+    <extension name="coverage">
+      <pattern>
+        <option name="PATTERN" value="com.politecnicomalaga.libgdxe1.lwjgl3.*" />
+        <option name="ENABLED" value="true" />
+      </pattern>
+    </extension>
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

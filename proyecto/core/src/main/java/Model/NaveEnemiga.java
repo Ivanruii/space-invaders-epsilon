@@ -1,11 +1,10 @@
 package Model;
 
-import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 public class NaveEnemiga extends Nave {
-    private DisparoEnemigo disparoE; //
+    private DisparoEnemigo disparoE;
     private Texture naveEnemiga;
     private boolean vivo;
 
@@ -16,39 +15,57 @@ public class NaveEnemiga extends Nave {
         this.disparoE = disparoE;
     }
 
-    public Texture getNaveEnemiga() {
-        return naveEnemiga;
+    public void actualizarDisparo() {
+        if (!vivo) return;
+        moverDisparo();
     }
+
+    public void moverNave(float deltaX, float deltaY) {
+        if (!vivo) return;
+        posX += deltaX;
+        posY += deltaY;
+    }
+
+    public void disparar() {
+        if (!disparoE.isEnCurso()) {
+            iniciarDisparo();
+        }
+    }
+
+    private void iniciarDisparo() {
+        disparoE.setPosX(posX + ancho / 2);
+        disparoE.setPosY(posY);
+        disparoE.setEnCurso(true);
+    }
+
+    private void moverDisparo() {
+        if (disparoE.isEnCurso()) {
+            disparoE.shoot(disparoE.getPosX());
+        } else {
+            disparoE.setPosX(posX + ancho / 2);
+            disparoE.setPosY(posY);
+        }
+    }
+
 
     public boolean isVivo() {
         return vivo;
     }
 
-    public void setVivo(boolean vivo) {
-        this.vivo = vivo;
-    }
-
-    // Movimiento hacia abajo
-    public void move() {
-        if (this.posY > 0) {
-            posY--;
-        } else {
-            vivo = false;
-        }
-    }
-
-    // Disparos
-    public void shoot() {
-        disparoE.setPosX(this.posX + (this.ancho / 2));
-        if (disparoE.getPosY() > 0) {
-            disparoE.setPosY(disparoE.getPosY() - 5);
-        } else {
-            disparoE.setPosY(this.posY);
-            disparoE.setEnCurso(false);
-        }
+    public DisparoEnemigo getDisparoEnemigo() {
+        return disparoE;
     }
 
     public void draw(SpriteBatch sp) {
-        sp.draw(this.getNaveEnemiga(), this.getPosX(), this.getPosY(), this.getAncho(), this.getAlto());
+        if (vivo) {
+            sp.draw(naveEnemiga, posX, posY, ancho, alto);
+        }
+        if (disparoE.isEnCurso()) {
+            disparoE.draw(sp);
+        }
+    }
+
+    public void setVivo(boolean vivo) {
+        this.vivo = vivo;
     }
 }

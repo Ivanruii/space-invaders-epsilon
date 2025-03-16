@@ -1,6 +1,5 @@
 package Model;
 
-import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
@@ -16,15 +15,30 @@ public class DisparoEnemigo extends Disparo {
         return disparoEnemigo;
     }
 
-    // Lógica del disparo enemigo
     public void shoot(float posX) {
         setPosX(posX);
         if (this.posY > 0) {
-            posY = posY - 5;
+            posY -= 5;
         } else {
-            posY = Gdx.graphics.getHeight() - 60;
             setEnCurso(false);
+            posY = 0;
         }
+    }
+
+    public boolean colisionaNaveAmiga(NaveAmiga naveAmiga) {
+        if (!this.isEnCurso() || !naveAmiga.isVivo()) {
+            return false;
+        }
+
+        float disparoX = this.getPosX();
+        float disparoY = this.getPosY();
+        float naveX = naveAmiga.getPosX();
+        float naveY = naveAmiga.getPosY();
+
+        return (disparoX < naveX + naveAmiga.getAncho() &&
+            disparoX + this.getAncho() > naveX &&
+            disparoY < naveY + naveAmiga.getAlto() &&
+            disparoY + this.getAlto() > naveY);
     }
 
     // Dibuja el disparo enemigo
