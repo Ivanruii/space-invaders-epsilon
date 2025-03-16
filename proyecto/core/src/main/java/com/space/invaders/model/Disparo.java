@@ -1,4 +1,4 @@
-package Model;
+package com.space.invaders.model;
 
 public class Disparo {
     protected int ancho;

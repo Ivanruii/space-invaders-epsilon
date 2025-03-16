@@ -8,11 +8,11 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.utils.ScreenUtils;
 
-import Model.Batallon;
-import Model.DisparoAmigo;
-import Model.NaveAmiga;
-import Model.NaveEnemiga;
-import Model.Squadron;
+import com.space.invaders.model.Batallon;
+import com.space.invaders.model.DisparoAmigo;
+import com.space.invaders.model.NaveAmiga;
+import com.space.invaders.model.NaveEnemiga;
+import com.space.invaders.model.Squadron;
 
 public class Main extends ApplicationAdapter {
     // Estado del juego

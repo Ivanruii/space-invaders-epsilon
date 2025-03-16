@@ -1,4 +1,4 @@
-package Model;
+package com.space.invaders.model;
 
 public class Nave {
     protected int ancho;

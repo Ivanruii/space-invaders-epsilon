@@ -1,4 +1,4 @@
-package Model;
+package com.space.invaders.model;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
