@@ -18,7 +18,7 @@ public class Fondo {
         this.x = 0;
         this.y = 0;
         this.velocidadFondo = velocidadFondo;
-        this.tableroInteractivo = new Texture ("fondo.jpeg");
+        this.tableroInteractivo = tableroInteractivo;
     }
 
     public float getVelocidadFondo() {
@@ -39,7 +39,4 @@ public class Fondo {
             y = 0;
         }
     }
-
-
-
 }

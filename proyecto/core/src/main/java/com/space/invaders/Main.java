@@ -10,6 +10,7 @@ import com.badlogic.gdx.utils.ScreenUtils;
 
 import com.space.invaders.model.Batallon;
 import com.space.invaders.model.DisparoAmigo;
+import com.space.invaders.model.Fondo;
 import com.space.invaders.model.NaveAmiga;
 import com.space.invaders.model.NaveEnemiga;
 import com.space.invaders.model.Squadron;
@@ -25,6 +26,7 @@ public class Main extends ApplicationAdapter {
     private EstadoJuego estadoActual;
     private int contadorMovimientoBatallon;
     private float posicionObjetivoJugador;
+    private Fondo fondo;
 
     // Recursos gráficos
     private Texture naveAmiga;
@@ -34,6 +36,7 @@ public class Main extends ApplicationAdapter {
     private Texture portada;
     private Texture gameOver;
     private Texture pantallaVictoria;
+    private Texture imagenFondo;
 
     // Recursos de audio
     private Music musicaMenu;
@@ -71,6 +74,8 @@ public class Main extends ApplicationAdapter {
         portada = new Texture("inicio.png");
         gameOver = new Texture("gameover.jpg");
         pantallaVictoria = new Texture("winner.jpg");
+        imagenFondo = new Texture("fondo.png");
+        fondo = new Fondo(60, imagenFondo);
     }
 
     /* Carga los archivos de música */
@@ -174,6 +179,8 @@ public class Main extends ApplicationAdapter {
                 break;
 
             case JUGANDO:
+                fondo.dibujarFondo(batch);
+                fondo.moverFondo();
                 jugador.draw(batch);
                 batallon.draw(batch);
                 break;
@@ -281,6 +288,7 @@ public class Main extends ApplicationAdapter {
         portada.dispose();
         gameOver.dispose();
         pantallaVictoria.dispose();
+        imagenFondo.dispose();
 
         musicaMenu.dispose();
         musicaJuego.dispose();
