@@ -210,6 +210,9 @@ public class Main extends ApplicationAdapter {
                 for (Squadron squadron : batallon.getSquadrons()) {
                     for (NaveEnemiga nave : squadron.getNaves()) {
                         if (nave.isVivo() && disparo.colisionaNaveEnemiga(nave)) {
+                            // Si justo la nave que ha sido impactada habia disparado
+                            // se borra el disparo de esta nave para evitar que se quede volando.
+                            nave.getDisparoEnemigo().setEnCurso(false);
                             nave.setVivo(false);
                             disparo.setEnCurso(false);
                             break;
