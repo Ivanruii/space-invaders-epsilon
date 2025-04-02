@@ -1,0 +1,9 @@
+Scrum 10-03-25 Hasta 17-03-25
+
+- Asignado Scrum Master a Ignacio Díez García.
+- Usando el repositorio ya creade de space-invaders-epsilon.
+- Repartidas las tareas:
+	- Tarea 1: Implementación de la nave, de la bala, su funcionamiento, la pantalla de inicio y la de fin + solución de errores de tú versión. Nacho
+    - Tarea 2: Implementación de escuadrón, batallón y (mejora de juego "opcional") + solución de errores de tú versión. Iván
+    - Tarea 3: Implementación de nave enemiga y el disparo enemigo + solución de errores de tú versión. Pablo
+    - Tarea 4: Implementación de un fondo móvil + solución de errores de tú versión. Ángel.

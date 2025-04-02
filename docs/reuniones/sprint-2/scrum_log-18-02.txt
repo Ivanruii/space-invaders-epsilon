@@ -1,0 +1,7 @@
+Scrum 18-02-25
+
+- Nacho: {Terminada Tarea [Fechas-Trabajo-Comiteado: 10 - 14 (7 commits) 04 (+ 1 commit Scrum-Master)]}.
+- Paula: {Terminada Tarea}.
+- Pablo: {Terminada Tarea [Fechas-Trabajo-Comiteado: 15 (1 commit)]}.
+- Ángel: {Terminada Tarea [Fechas-Trabajo-Comiteado: 16 (1 commit)]}.
+- Iván: {Terminada Tarea [Fechas-Trabajo-Comiteado: 16 - 17 (6 commits)]}.
